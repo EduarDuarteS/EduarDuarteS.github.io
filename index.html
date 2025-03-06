@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="VerificaTuPago.online - Plataforma oficial para la verificación y conciliación de pagos.">
   <meta name="author" content="Flavio Yuret Moreno Ortega">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
   <title>VerificaTuPago.online - Inicio</title>
 
   <!-- Bootstrap core CSS -->
@@ -14,50 +13,172 @@
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/templatemo-stand-blog.css">
   <link rel="stylesheet" href="assets/css/owl.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap" rel="stylesheet">
+
   <style>
-    /* Ajustes adicionales para un look profesional */
-    .navbar-brand h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-    .main-banner {
-      margin-bottom: 40px;
-    }
-    .main-banner .owl-carousel .item-content {
-      padding: 20px;
-      text-align: center;
-    }
-    .main-banner .owl-carousel .item-content .main-content {
-      margin-bottom: 10px;
+    /* General body settings */
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
     }
 
-    /* Sección del negocio */
+    /* Navbar brand styling */
+    .navbar-brand h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    /* Main banner (carousel) styling */
+    .main-banner {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .owl-banner .item {
+      position: relative;
+      min-height: 65vh; /* Adjust height to your preference */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .owl-banner .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    /* Overlay to darken images for text readability */
+    .owl-banner .item::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    /* Content overlay on images */
+    .owl-banner .item-content {
+      position: absolute;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      max-width: 80%;
+    }
+    .owl-banner .item-content .main-content {
+      margin-bottom: 20px;
+    }
+    .owl-banner .item-content .meta-category span {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .owl-banner .item-content h4 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .owl-banner .item-content p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .owl-banner .item-content a.cta-button {
+      padding: 10px 30px;
+      background-color: #007bff;
+      border-radius: 25px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    .owl-banner .item-content a.cta-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Section heading styling */
+    section h2 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Business info styling */
+    .blog-posts {
+      padding: 40px 0;
+    }
     .blog-posts .down-content {
-      background: #f9f9f9;
+      background: #fff;
       padding: 20px;
       border-radius: 8px;
       margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .blog-posts .down-content h4 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
     }
     .blog-posts .down-content span {
-      font-weight: 600;
-      color: #2d2d2d;
-      font-size: 1.1rem;
+      display: inline-block;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: #000;
     }
 
-    /* Sección de contacto */
+    /* Sidebar styling */
+    .sidebar-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .sidebar-item h2 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .sidebar-item.categories .content ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .sidebar-item.categories .content ul li {
+      margin: 10px 0;
+    }
+    .sidebar-item.categories .content ul li a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .sidebar-item.categories .content ul li a:hover {
+      color: #007bff;
+    }
+
+    /* Contact section styling */
     .contact-us {
       background: #f0f0f0;
-      padding: 40px 0;
+      padding: 60px 0;
     }
     .contact-us h2 {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       font-weight: 700;
+      text-align: center;
     }
     .down-contact {
       background: #fff;
       border-radius: 8px;
       padding: 30px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
     }
     .contact-information {
       background: #fff;
@@ -66,8 +187,63 @@
       margin-top: 30px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+    .contact-information ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .contact-information ul li {
+      margin-bottom: 20px;
+    }
+    .contact-information ul li h5 {
+      margin: 0 0 5px 0;
+      font-weight: 700;
+    }
+
+    /* Map styling */
+    #map iframe {
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+    }
+
+    /* Footer styling */
+    footer {
+      background: #fff;
+      padding: 30px 0;
+    }
+    footer .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px 0;
+      display: flex;
+      justify-content: center;
+    }
+    footer .social-icons li {
+      margin: 0 10px;
+    }
+    footer .social-icons li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    footer .social-icons li a:hover {
+      color: #007bff;
+    }
+    footer .copyright-text {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    footer .copyright-text em {
+      font-style: italic;
+      color: #666;
+    }
+
   </style>
 </head>
+
 <body>
   <!-- Preloader -->
   <div id="preloader">
@@ -77,6 +253,7 @@
       <div></div>
     </div>
   </div>
+
   <!-- Header -->
   <header>
     <nav class="navbar navbar-expand-lg">
@@ -103,7 +280,7 @@
     </nav>
   </header>
 
-  <!-- Banner principal -->
+  <!-- Banner principal (Carousel) -->
   <div class="main-banner header-text" id="inicio">
     <div class="container-fluid">
       <div class="owl-banner owl-carousel">
@@ -115,9 +292,10 @@
               <div class="meta-category">
                 <span>Seguridad</span>
               </div>
-              <h4>Verifica tus pagos con total confianza</h4>
+              <h4>Protege cada una de tus transacciones</h4>
             </div>
-            <p>Utilizamos tecnología avanzada para garantizar la seguridad en cada transacción.</p>
+            <p>Utilizamos tecnología de vanguardia para asegurar la fiabilidad de cada pago y la tranquilidad de tu negocio.</p>
+            <a href="about.html" class="cta-button">Conoce Más</a>
           </div>
         </div>
         <!-- Slide 2: Transparencia y datos verificados -->
@@ -130,7 +308,8 @@
               </div>
               <h4>Información clara y verificada</h4>
             </div>
-            <p>Accede a datos oficiales de tu negocio y mantén tus pagos siempre controlados.</p>
+            <p>Obtén reportes detallados y datos confiables para la toma de decisiones estratégicas.</p>
+            <a href="#negocio" class="cta-button">Más Detalles</a>
           </div>
         </div>
         <!-- Slide 3: Simplicidad en el proceso de pagos -->
@@ -141,9 +320,10 @@
               <div class="meta-category">
                 <span>Eficiencia</span>
               </div>
-              <h4>Verificación rápida y sin complicaciones</h4>
+              <h4>Conciliación de pagos sin complicaciones</h4>
             </div>
-            <p>Un sistema intuitivo para gestionar tus pagos de forma ágil y sencilla.</p>
+            <p>Ahorra tiempo y costos con nuestra solución intuitiva y automatizada.</p>
+            <a href="#contacto" class="cta-button">Contáctanos</a>
           </div>
         </div>
       </div>
@@ -154,6 +334,7 @@
   <!-- Sección: Información del Negocio -->
   <section class="blog-posts" id="negocio">
     <div class="container">
+      <h2>Información del Negocio</h2>
       <div class="row">
         <div class="col-lg-8">
           <div class="all-blog-posts">
@@ -162,7 +343,7 @@
               <div class="col-lg-12">
                 <div class="blog-post">
                   <div class="down-content">
-                    <span>Información del Negocio</span>
+                    <span>Datos Principales</span>
                     <h4>Flavio Moreno</h4>
                     <p>
                       <strong>Dirección:</strong> Carrera 111 141A, Suba, Bogotá, D.C., Cundinamarca 111141, Colombia<br>
@@ -170,14 +351,17 @@
                       <strong>Sitio web:</strong> <a href="https://verificatupago.online/" target="_blank">verificatupago.online</a><br>
                       <strong>Divisa:</strong> USD | <strong>Zona horaria:</strong> America/Bogota
                     </p>
-                    <p>Nuestra cuenta de WhatsApp Business está en proceso de adecuación para cumplir las pautas de la plataforma.</p>
+                    <p>
+                      Aseguramos la integridad de tu información y la transparencia de todas tus operaciones.
+                    </p>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
-        <!-- Sidebar (opcional) -->
+        <!-- Sidebar -->
         <div class="col-lg-4">
           <div class="sidebar">
             <div class="sidebar-item categories">
@@ -186,7 +370,7 @@
               </div>
               <div class="content">
                 <ul>
-                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="#inicio">Inicio</a></li>
                   <li><a href="#negocio">Negocio</a></li>
                   <li><a href="policies.html">Política</a></li>
                   <li><a href="terms.html">Términos</a></li>
@@ -194,7 +378,11 @@
                 </ul>
               </div>
             </div>
-            <!-- Puedes incluir redes sociales o información adicional -->
+            <!-- Sección para información adicional -->
+            <div class="sidebar-item">
+              <h2>¿Por qué VerificaTuPago.online?</h2>
+              <p>Ofrecemos soluciones para garantizar la veracidad de cada transacción, reduciendo el fraude y la morosidad.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -205,6 +393,7 @@
   <!-- Sección: Contacto -->
   <section class="contact-us" id="contacto">
     <div class="container">
+      <h2>Ponte en Contacto</h2>
       <div class="row">
         <div class="col-lg-12">
           <div class="down-contact">
@@ -282,7 +471,7 @@
         <div class="col-lg-12">
           <div id="map">
             <iframe src="https://maps.google.com/maps?q=Carrera%20111%20141A,%20Suba,%20Bogot%C3%A1&t=&z=14&ie=UTF8&iwloc=&output=embed"
-              width="100%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
+              height="450px" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -304,8 +493,7 @@
         </div>
         <div class="col-lg-12">
           <div class="copyright-text">
-            <p>© 2025 VerificaTuPago.online | Todos los derechos reservados.
-              <br>
+            <p>© 2025 VerificaTuPago.online | Todos los derechos reservados.<br>
               <em>WhatsApp es una marca registrada de Meta. No estamos afiliados ni patrocinados por WhatsApp.</em>
             </p>
           </div>
